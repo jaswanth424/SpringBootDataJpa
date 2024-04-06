@@ -1,22 +1,22 @@
-one-to-one relationship
-=======================
+#one-to-one relationship
+
 
 Each Person is associated with only one address.
-=====================================================
-Model
-Address-- no mapping annotations required.
-Person -- add @OneToOne () annotation on Address variable.
+
+#Model
+- Address-- no mapping annotations required.
+- Person -- add @OneToOne () annotation on Address variable.
 example:
 public class Person {
     // person attributes
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_address_id")
     private Address address;
-=====================================================
 
-* make sure person, person_seq, address, address_seq tables are not present in database;
 
-curl --location 'http://localhost:9093/person' \
+##* make sure person, person_seq, address, address_seq tables are not present in database;
+
+##curl --location 'http://localhost:9093/person' \
 --header 'Content-Type: application/json' \
 --data '
 [
