@@ -21,6 +21,6 @@ public class PersonService {
     }
 
     public List<Person> getPersons(Integer id) {
-        return personRespository.findPersonById(id);
+        return personRespository.findPersonByPerson_id(id);
     }
 }

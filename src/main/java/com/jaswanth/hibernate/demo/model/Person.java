@@ -11,10 +11,13 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Person {
     @Id
-    private Integer id;
+    @Column(name = "person_id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer person_id;
     private String name;
     private String country;
 
     @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "fk_address_id")
     private Address address;
 }

@@ -11,9 +11,12 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Address {
     @Id
-    private int id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "address_id")
+    private int address_id;
     @Column(name = "street_number")
     private Integer streetNumber;
     @Column(name = "stree_name")
     private String streetName;
+
 }

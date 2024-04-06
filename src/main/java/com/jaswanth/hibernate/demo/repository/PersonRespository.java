@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface PersonRespository extends JpaRepository<Person, Integer> {
 
-    List<Person> findPersonById(Integer id);
+    List<Person> findPersonByPerson_id(Integer id);
+//    List<Person> findPersonById(Integer id);
 
 }
